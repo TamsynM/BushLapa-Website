@@ -1,0 +1,236 @@
+﻿#mainHeading /*SL - this changes the heading*/
+{
+    position: center;
+    font-weight: bolder;
+    font-size: 36px;
+    left: 450px;/*SL - added left to match the body*/
+    height: 50px;/*SL - added height auto to self adjust*/
+    top: 5px;/*SL - changed from 10px*/
+    z-index: 3;
+    color: khaki; /*TM - added this to change the color*//*SL - altered color to be visible*/
+    /*TM text-decoration: underline;  - added this to underline the headings*/
+    text-transform: uppercase; /*TM - added this to make the headings capital letters*/
+    font-family: Nyala, Gadget, sans-serif; /*TM - added this to make it a certain text*/
+}
+#boxedItem
+{
+    background-color: whitesmoke;
+    width: auto;
+    padding: inherit;
+    border: 25px solid whitesmoke;
+    margin: 25px;
+}
+
+/*body 
+{
+    margin:2em;
+    z-index:1;
+   background-image: url();
+    background-position:center;
+    font-size:10pt;
+    text-align:justify;
+}
+#transbox
+{
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity:0.0;
+}
+#transbox p
+{
+  margin: 5%;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}*/
+
+#navigation /*SL - This is the menu bar left side*/
+{
+    position:fixed; /*SL - changed from absolute to fixed*/
+    top:70px; /*SL - changed from 150px*/
+    left:11px; /*SL - included the left*/
+    z-index:3;
+    width:125px;
+    height: auto;
+
+}
+
+#logo
+{
+    position:center;
+    font-weight: bold;
+    left:450px;/*SL - added left to match the body*/
+    height:auto;/*SL - added height auto to self adjust*/
+    top:15px;/*SL - changed from 10px*/
+    z-index:3;
+    color: dimgray; /*TM - added this to change the color*/
+    text-decoration: underline; /*TM - added this to underline the headings*/
+    text-transform: uppercase; /*TM - added this to make the headings capital letters*/
+    font-family: "Arial Black", Gadget, sans-serif; /*TM - added this to make it a certain text*/
+}
+#copyright
+{
+    border:3px groove gray;
+    padding:5px;
+    position:absolute;
+    top:570px;
+    z-index:2;
+    top:510px;
+    left:120px;
+    width:643px;
+    height:10px;
+    background-color:rgb(0,0,0);
+    color:silver;
+    font-size:10pt;
+}
+#topIntro
+{
+    padding:1px;
+    position:absolute;
+    left:160px;/*SL - changed this*/
+    top:110px;/*SL - changed from 30px*/
+    bottom:auto;/*SL - changed from 180px*/
+    z-index:2;
+    /*SL - background-color:lightgray;*/
+    width:auto;/*SL - changed from 1100px*/
+    height:auto;/*SL - changed from 1000*/
+    color: black;/*SL - this is for the font color*/
+}
+#advert
+{
+    padding:5px;
+    z-index:2;
+    position:absolute;
+    left:777px;
+    top:30px;
+    background-color:rgb(0,0,0);
+    width:150px;
+    height:494px;
+    color: white;
+}
+a
+{
+    background-color:grey;
+}
+#menu
+{
+    list-style: none;
+    padding: 5px;
+    z-index:3;
+    margin: 1px;
+}
+#menu li
+{
+    position: relative;
+    padding:5px;
+    float:left;
+    z-index:3;
+    top:60px;
+    left:10px;
+}
+#menu a
+{
+    text-decoration:none;
+    z-index:3;
+}
+#menu img
+{
+    border: 0;
+    z-index:3;
+    vertical-align: top;
+}
+#list
+{
+    position:unset;
+    left:1px;
+    font-family: Verdana, sans-serif;
+    z-index:3;
+}
+#list ul
+{
+    width:auto;
+    list-style: none;
+    z-index:3;
+    margin: 0;
+    padding: 0;
+}
+#list li
+{
+    border-bottom:1px solid #707070;
+    z-index:3;
+}
+#list li a:link, #list li a:visited/*changes the plain when not hovered over for menu*/
+{
+    display: block;
+    text-align:left;
+    z-index:3;
+    padding: 5px 5px 5px 0.5em;
+    border-left: 12px solid #707070;
+    border-right: 1px solid #707070;
+    font-family: Nyala, Helvetica, sans-serif; 
+    font-size: medium; 
+    font-weight: bold; 
+    text-transform: capitalize; 
+    color: #003300; /*SL - Menu font color*/
+    background-color: khaki;/*SL - Menu background color*/
+    text-decoration:none;
+}
+#list li a:hover /*changes the color when you hover over menu item*/
+{
+    background-color: rosybrown;
+    color:white;
+    z-index:3;
+}
+#list ul ul
+{
+    margin-left:20px;
+    width:200px;
+    height:0;
+    visibility:hidden;
+    z-index:3;
+}
+#list ul ul li.light
+{
+    border-bottom: 1px solid #707070;
+    /*-moz-opacity:0.5;*/
+    margin:0;
+    z-index:3;
+}
+#list ul ul li.dark
+{
+    border-bottom: 1px solid #707070;
+    margin:0;
+    z-index:3;
+}
+#list ul ul a:link, #list ul ul a:visited
+{
+    background-color:#000000;
+    color: #FF0000;
+    z-index:3;
+}
+#list ul ul a:hover
+{
+    background-color:#000000;
+    color: #FF0000;
+    z-index:3;
+}
+
+body:after
+{
+    content: "";
+    background-image:url(Images/background/068.JPG);
+   /* background-repeat:repeat;
+    background-position:center;
+    background-attachment:fixed;
+    filter: alpha(opacity=50);
+    */
+   background-size:cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;    
+}
