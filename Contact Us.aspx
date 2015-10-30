@@ -16,7 +16,7 @@
         <div id="navigation">
                 <div id="list">
                     <ul>
-                        <li><a href="default.aspx">Home</a></li>
+                        <li><a href="Home.aspx">Home</a></li>
                         <li><a href="Gallery.aspx">Gallery</a></li>
                        <!-- <li><a href="Booking.aspx">Booking</a></li>-->
                     </ul>
@@ -59,6 +59,8 @@
 
         <div id="contactForm"> <!-- TM - Created contact form including message box area -->
             <!--<table style="width:100%; margin-left: 122px;"> TM - took this out so that the table can be aligned to the left of the page-->
+            
+            <!-- TM Testing another version of this form, please don't delete.
             <table>
                 <tr>
                     <td class="auto-style1"><asp:Label ID="contactName" runat="server" Text="* Name:" Width="150px"></asp:Label></td>
@@ -75,12 +77,76 @@
                 <tr>
                     <td class="auto-style1"><asp:Label ID="contactContactNumberLBL" runat="server" Text="* Contact Number:" Width="150px"></asp:Label> </td>
                     <td><asp:TextBox ID="contactNumberTxt" runat="server" Width="150px"></asp:TextBox></td>
+                </tr> -->
+                <!--TM - Added this section for the checkboxes -->  
+                <!--<tr>
+                    <td class="auto-style1"><asp:Label ID="transportNeededLbl" runat="server" Text="Transport Needed:" Width="150px"></asp:Label> </td>
+                    <td class="auto-style1">                 
+                        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                        <asp:ListItem Value="Quad Bike">Quad Bike 0</asp:ListItem>
+                        <asp:ListItem>Quad Bike 1</asp:ListItem>
+                        <asp:ListItem>Quad Bike 2</asp:ListItem>
+                        </asp:CheckBoxList>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="auto-style1"><asp:Label ID="contactMessageLbl" runat="server" Text="Message:" Width="150px"></asp:Label> </td>
+                    <td class="auto-style1"><asp:Label ID="breakfastNeededLbl" runat="server" Text="Breakfast Needed:" Width="150px"></asp:Label> </td>
+                    <td class="auto-style1">              
+                        <asp:CheckBoxList ID="CheckBoxList2" runat="server">
+                        <asp:ListItem>Farm-style Breakfast</asp:ListItem>
+                        <asp:ListItem>Whole Fish or Snoek</asp:ListItem>
+                        </asp:CheckBoxList>
+                    </td>
+                </tr> -->
+                <!-- TM - End of section added -->
+                <!--<tr>
+                    <td class="auto-style1"><asp:Label ID="contactMessageLbl" runat="server" Text="Additional Information:" Width="150px"></asp:Label> </td>
                     <td><textarea ID="messagetxt" runat="server" rows="4" cols="50"></textarea></td>
                 </tr>
-            </table>
+                
+            </table> -->
+            <asp:Panel ID="ContactUsPanel" runat="server" DefaultButton="btnSubmit">
+                <p>Contact Us using the below form</p>
+                <p>Name: <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ErrorMessage="*"
+                ControlToValidate="contactFirstName" ValidationGroup="save" /><br />
+                <asp:TextBox ID="contactFirstName" runat="server" Width="250px" /><br />
+                
+                Surname: <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="*"
+                ControlToValidate="contactLastName" ValidationGroup="save" /><br />
+                <asp:TextBox ID="contactLastName" runat="server" Width="250px" /><br />
+                
+                Email: <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*"
+                ControlToValidate="contactEmail" ValidationGroup="save" /><br />
+                <asp:TextBox ID="contactEmail" runat="server" Width="250px" />
+                <asp:RegularExpressionValidator runat="server" ID="RegularExpressionValidator23"
+                SetFocusOnError="true" Text="Example: username@gmail.com" ControlToValidate="contactEmail"
+                ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic"
+                ValidationGroup="save" /><br />
+                
+                Contact Number: <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*"
+                ControlToValidate="contactNumber" ValidationGroup="save" /><br />
+                <asp:TextBox ID="contactNumber" runat="server" Width="400px" /><br /> <br />
+
+                Breakfast Required: <asp:CheckBoxList ID="breakfastCheckBoxList" runat="server">
+                <asp:ListItem>Farm-style Breakfast</asp:ListItem>
+                <asp:ListItem>Whole Fish or Snoek</asp:ListItem>
+                </asp:CheckBoxList> <br />
+
+                Transport Required: <asp:CheckBoxList ID="transportCheckBoxList" runat="server">
+                <asp:ListItem>Quad Bike 0</asp:ListItem>
+                <asp:ListItem>Quad Bike 1</asp:ListItem>
+                <asp:ListItem>Quad Bike 2</asp:ListItem>
+                </asp:CheckBoxList><br />
+
+                Additional Information: <br />
+                <asp:TextBox ID="contactMessage" runat="server" 
+                TextMode="MultiLine" Rows="10" Width="400px" />
+                </p>
+                
+                <p>
+                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="Button1_Click" ValidationGroup="save" />
+                </p>
+            </asp:Panel>
         </div>
     </form>
             

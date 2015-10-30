@@ -18,7 +18,7 @@
         <div id="navigation">
             <div id="list">
                 <ul>
-                    <li><a href="default.aspx">Home</a></li>
+                    <li><a href="Home.aspx">Home</a></li>
                     <!-- <li><a href="Booking.aspx">Booking</a></li>-->
                     <li><a href="Contact Us.aspx">Contact Us</a></li>
                 </ul>
