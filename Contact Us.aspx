@@ -12,18 +12,21 @@
         <div id="mainHeading">
                 <center><h1>Contact Us</h1></center><br /><br />
         </div>
-    <div id="navigation">
-            <div id="list">
-                <ul>
-                    <li><a href="default.aspx">Home</a></li>
-                    <li><a href="Gallery.aspx">Gallery</a></li>
-                   <!-- <li><a href="Booking.aspx">Booking</a></li>-->
-                </ul>
-            </div>
+        
+        <div id="navigation">
+                <div id="list">
+                    <ul>
+                        <li><a href="default.aspx">Home</a></li>
+                        <li><a href="Gallery.aspx">Gallery</a></li>
+                       <!-- <li><a href="Booking.aspx">Booking</a></li>-->
+                    </ul>
+                </div>
         </div>
+              
         <div id="topIntro">
+            <br /> <br />
             <p style="font-size:16.0pt;  font-family: Nyala; font-weight: bold;">
-              <span>Choices our menu will be as follows:<br />
+                <span>Choices our menu will be as follows:<br />
                     First night on arrival:<br />
                     Potjie Kos, Rooster koek/ fresh baked bread, salad, jam and cheese.<br />
                     (All will be prepared by the Hosts).<br />
@@ -50,9 +53,36 @@
                     	Pictures available on request.<br />
                     Gielie and Charlotte Visser<br />
                     Volstruisvlei LAPA<br /><br />
-            </span>
-                </p>
+                </span>
+            </p>
+         </div>
+
+        <div id="contactForm"> <!-- TM - Created contact form including message box area -->
+            <!--<table style="width:100%; margin-left: 122px;"> TM - took this out so that the table can be aligned to the left of the page-->
+            <table>
+                <tr>
+                    <td class="auto-style1"><asp:Label ID="contactName" runat="server" Text="* Name:" Width="150px"></asp:Label></td>
+                    <td><asp:TextBox ID="nameTxt" runat="server" Width="150px"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1"><asp:Label ID="contactSurnameLBL" runat="server" Text="* Surname:" Width="150px"></asp:Label></td>
+                    <td><asp:TextBox ID="surnameTxt" runat="server" Width="150px"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1"><asp:Label ID="contactEmailLBL" runat="server" Text="Email:" Width="150px"></asp:Label> </td>
+                    <td><asp:TextBox ID="emailTxt" runat="server" Width="150px"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1"><asp:Label ID="contactContactNumberLBL" runat="server" Text="* Contact Number:" Width="150px"></asp:Label> </td>
+                    <td><asp:TextBox ID="contactNumberTxt" runat="server" Width="150px"></asp:TextBox></td>
+                </tr>
+                <tr>
+                    <td class="auto-style1"><asp:Label ID="contactMessageLbl" runat="server" Text="Message:" Width="150px"></asp:Label> </td>
+                    <td><textarea ID="messagetxt" runat="server" rows="4" cols="50"></textarea></td>
+                </tr>
+            </table>
         </div>
     </form>
-</body>
+            
+    </body>
 </html>

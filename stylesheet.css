@@ -21,30 +21,6 @@
     margin: 25px;
 }
 
-/*body 
-{
-    margin:2em;
-    z-index:1;
-   background-image: url();
-    background-position:center;
-    font-size:10pt;
-    text-align:justify;
-}
-#transbox
-{
-  margin: 30px;
-  background-color: #ffffff;
-  border: 1px solid black;
-  opacity:0.0;
-}
-#transbox p
-{
-  margin: 5%;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
-  color: black;
-}*/
-
 #navigation /*SL - This is the menu bar left side*/
 {
     position:fixed; /*SL - changed from absolute to fixed*/
@@ -87,7 +63,7 @@
 #topIntro
 {
     padding:1px;
-    position:absolute;
+    /*position:absolute; TM took this out so that the contact us form doesn't overlap the info on the Contact Us page - */
     left:160px;/*SL - changed this*/
     top:110px;/*SL - changed from 30px*/
     bottom:auto;/*SL - changed from 180px*/
@@ -225,7 +201,7 @@ body:after
     background-attachment:fixed;
     filter: alpha(opacity=50);
     */
-   background-size:cover;
+    background-size:cover;
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -233,4 +209,19 @@ body:after
     right: 0;
     position: fixed;
     z-index: -1;    
+}
+
+#contactForm
+{
+    font-size:16.0pt;
+    font-family: Nyala;
+    font-weight: bold;
+    padding:1px;
+    left:160px;
+    top:110px;
+    bottom:auto;
+    z-index:2;
+    width:auto;
+    height:auto;
+    color: black;
 }
