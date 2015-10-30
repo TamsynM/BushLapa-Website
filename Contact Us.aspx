@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
       <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> <!-- TM - Added this line to include a page icon -->
     <title>Contact Us</title>
 </head>
 <body>
@@ -16,7 +17,7 @@
         <div id="navigation">
                 <div id="list">
                     <ul>
-                        <li><a href="Home.aspx">Home</a></li>
+                        <li><a href="default.aspx">Home</a></li>
                         <li><a href="Gallery.aspx">Gallery</a></li>
                        <!-- <li><a href="Booking.aspx">Booking</a></li>-->
                     </ul>

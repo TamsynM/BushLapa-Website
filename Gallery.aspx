@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Gallery</title>
-   <link rel="stylesheet" type="text/css" href="stylesheet.css"/>  
-        
+	<title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>  
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> <!-- TM - Added this line to include a page icon -->    
 </head>
 <body>
     <!-- <body style="background-image:url(Images/background/068.JPG); opacity:0.4;"> -->
@@ -18,7 +18,7 @@
         <div id="navigation">
             <div id="list">
                 <ul>
-                    <li><a href="Home.aspx">Home</a></li>
+                    <li><a href="default.aspx">Home</a></li>
                     <!-- <li><a href="Booking.aspx">Booking</a></li>-->
                     <li><a href="Contact Us.aspx">Contact Us</a></li>
                 </ul>

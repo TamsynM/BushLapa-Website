@@ -17,11 +17,11 @@ public partial class Contact_Us : System.Web.UI.Page
     protected void SendMail()
     {
         // Gmail Address to send the information to
-        var fromAddress = "tamsyn.murphy@gmail.com";
+        var fromAddress = "cherosky30.cw@gmail.com";
         // The persons email address who is making the query
         var toAddress = contactEmail.Text.ToString();
         //Password of your gmail address
-        const string fromPassword = "popplE@12!";
+        const string fromPassword = "dragon4u";
         // Passing the values and make a email format to display
         string subject = "Booking Enquiry";
         string body = "From: " + contactFirstName.Text + "" + contactLastName.Text + "\n";
@@ -44,7 +44,7 @@ public partial class Contact_Us : System.Web.UI.Page
         }
         // Passing values to smtp object
         smtp.Send(fromAddress, toAddress, subject, body);
-        Response.Write("<script type=\"text/javascript\">alert('Thank you for your email, we will be in touch shortly');</script>");
+        Response.Write("<script type=\"text/javascript\">alert('Thank you for your query, we will be in touch shortly');</script>");
     }
 
     //Function to state what happens when the Submit button is pressed.
