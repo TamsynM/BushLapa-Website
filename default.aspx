@@ -29,35 +29,24 @@
                 <tr>
                     <td>
                         <p style="font-size:16.0pt;  font-family: Nyala; text-align:justify; font-weight: bold; margin-right: 20px; "><!--added a margin to the right 20px-->
-                            <img src="Images/homePage/nameFar.jpg" alt="Images/homePage/lapaInside.jpg" style="width:350px; height:235px; float:right; padding-left: 20px;"/><!--getting image aligned next to text!-->
-                                The Lapa is situated on a private farm Volstruisvlei, 10Km outside Velddrift on the Pieketberg road. 
-                                The Lapa is approx 30 km from the 2 main West Coast towns namely: Vredenburg and Langebaan.
-                                So this means, you are close to all the golf courses in the area as well as the sea, while experiencing a magic bush break-way. 
-                                The flower season and the crayfish season are all popular times. The Lapa is in the middle of the bush surrounded with nature and the night sounds.
-                                This concept was originally started as a family break-away, but has turned so popular due to the location of the venue. 
-                                Guests experience the best of many worlds as they peacefully sit around the camp fire. 
-                                You need a 4X4 to get from the mainfarm house to the Lapa, which is appox 2.5km into the bush.
-                        </p>
-                        <p style="font-size:16.0pt;  font-family: Nyala; text-align:justify; font-weight: bold; margin-right: 20px;"><!--took the font-weight: bold out && added a margin to the right-->
-                            <img src="Images/homePage/quadBLK.jpg" alt="Images/homePage/lapaInside.jpg" style="width:350px; height:235px; float:left; padding-right: 20px;"/><!--getting image aligned next to text!-->
-                                If you do not have a 4x4, your host will transport you from 
-                                the main house to the Lapa, Or 2 x Quad Bikes are available for rent (to only dive)
-                                to the Lapa (On request prior to the booking). The Lapa can accommodate appox 14/20 
-                                people (on request) to sleep over, with camp type accommodation. Everything you will 
-                                need is already in the Lapa, including the bedding. It has a warm water, shower, 
-                                lights, toilet, music player, bread oven and inside and outside fire/ braai and all 
-                                utensils. You can just arrive, relax and kick off your shoes. Minimum, of 2 nights stays, 
-                                per booking.This is the perfect venue for team building, private parties, and family 
-                                break away type venue. You are on the farm in the bush, but yet close to all the 
-                                other activities.
+                            <img src="Images/homePage/nameFar.jpg" alt="Images/homePage/lapaInside.jpg" style="width:350px; height:235px; float:right; margin: 10px; border: 20px solid white; "/><!--getting image aligned next to text!-->
+                                <br />Situated just 10 kilometres outside of Velddrift on the Pieketberg road, the LAPA was built on a private farm deep in the bush for a truly secluded outdoors experience.
+                                The LAPA is located approximately 30 KM away from two popular West Coast towns: Vredenburg and Langebaan. This means you will be close to all the best golf courses and activities the area has to offer while experiencing a magic break-away in the bush. Visit the Volstruisvlei Bush Lapa during the popular crayfish and flower seasons on the West Coast.
+                                The Bush Lapa concept originally began as a family vacation spot, but due to much interest and the popularity for its location, we’ve extended the guest list and opened the doors to other outdoors and camping enthusiasts.
+                                As a guest, you’ll enjoy peaceful evenings around camp fires with the night sounds of nature all around you. Treat yourself, your family or your friends to an outdoors experience.
+                                Travelling between the main farm house and the Bush LAPA, located 2.5KM into the bush requires a 4X4 vehicle. No 4X4? No fuss. Your host will be happy to transport you from the main farm house to the Bush LAPA.
+
+                        <!--</p>
+                        <p style="font-size:16.0pt;  font-family: Nyala; text-align:justify; font-weight: bold; margin-right: 20px;">took the font-weight: bold out && added a margin to the right-->
+                               <img src="Images/homePage/quadBLK.jpg" alt="Images/homePage/lapaInside.jpg" style="width:350px; height:235px; float:left; margin: 10px; border: 20px solid white;"/><!--getting image aligned next to text!-->
+                                Alternatively, two (2x) quad bikes are available for rent upon request prior to booking. Please note: The use of the quad bikes are for travelling to and from the Bush LAPA only. No unauthorised riding of the quad bikes is permitted.
+                                Enjoy a camping accommodation experience that can house between 14 and 20 people (on request). The Bush LAPA is equipped with everything you will need to make your stay comfortable. Upon your arrival you will find bedding, warm water, bathroom amenities, a bread oven, a music player, and kitchen utensils. You will also have access to both inside and outside braai facilities.
+                                You can just arrive, relax and kick off your shoes.
+                                Minimum of 2 nights stays, per booking.
+                                This is the perfect venue for team building, private parties, and as a family break-away type venue.
+                                You will be on the farm in the bush, yet close to all the other activities the area has to offer. 
                         </p>
                 </td>
-                </tr>
-                <tr>
-                    <td class="auto-style5">
-                        &nbsp;</td>
-                    <td class="auto-style2">
-                        &nbsp;</td>
                 </tr>
             </table>
           </div>

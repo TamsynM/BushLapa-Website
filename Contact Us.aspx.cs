@@ -5,6 +5,7 @@ using System.Net;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
 
 public partial class Contact_Us : System.Web.UI.Page
 {
@@ -13,55 +14,45 @@ public partial class Contact_Us : System.Web.UI.Page
 
     }
 
-    //Added in function to send the email from the website to the owner
-    protected void SendMail()
-    {
-        // Gmail Address to send the information to
-        var fromAddress = "cherosky30.cw@gmail.com";
-        // The persons email address who is making the query
-        var toAddress = contactEmail.Text.ToString();
-        //Password of your gmail address
-        const string fromPassword = "dragon4u";
-        // Passing the values and make a email format to display
-        string subject = "Booking Enquiry";
-        string body = "From: " + contactFirstName.Text + "" + contactLastName.Text + "\n";
-        body += "Email: " + contactEmail.Text + "\n";
-        body += "Subject: Booking Enquiry" + "\n";
-        body += "Contact Number: \n" + contactNumber.Text + "\n";
-        body += "Question: \n" + contactMessage.Text + "\n";
-        body += "Breakfast required: \n" + breakfastCheckBoxList.SelectedItem + "\n";
-        body += "Transport required: \n" + transportCheckBoxList.SelectedItem + "\n";
-
-        // smtp settings
-        var smtp = new System.Net.Mail.SmtpClient();
-        {
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
-            smtp.EnableSsl = true;
-            smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
-            smtp.Credentials = new NetworkCredential(fromAddress, fromPassword);
-            smtp.Timeout = 20000;
-        }
-        // Passing values to smtp object
-        smtp.Send(fromAddress, toAddress, subject, body);
-        Response.Write("<script type=\"text/javascript\">alert('Thank you for your query, we will be in touch shortly');</script>");
-    }
-
-    //Function to state what happens when the Submit button is pressed.
     protected void Button1_Click(object sender, EventArgs e)
     {
         try
         {
-            //Run the sendmail function and clear all the boxes 
-            SendMail();
+            //Create the msg object to be sent
+            MailMessage msg = new MailMessage();
+            //Add your email address to the recipients
+            msg.To.Add("info@volstruisvlei.co.za");
+            //Configure the address we are sending the mail from
+            MailAddress address = new MailAddress(contactEmail.Text.ToString());
+            msg.From = address;
+            //Append their name in the beginning of the subject
+            msg.Subject = "Booking Enquiry";
+            msg.Body = "Email: " + contactEmail.Text + "\n" + "Contact Number: \n" + contactNumber.Text + "\n" + "Transport required: \n" + transportCheckBoxList.SelectedItem + "\n"+ "Question: \n" + contactMessage.Text + "\n";
+
+            //Configure an SmtpClient to send the mail.
+            SmtpClient client = new SmtpClient("nicholson.aserv.co.za");
+            client.EnableSsl = false; //only enable this if your provider requires it
+            //Setup credentials to login to our sender email address ("UserName", "Password")
+            NetworkCredential credentials = new NetworkCredential("info@volstruisvlei.co.za", "Bush4lapa#15");
+            client.Credentials = credentials;
+
+            //Send the msg
+            client.Send(msg);
+
+            //Display some feedback to the user to let them know it was sent
+            Response.Write("<script type=\"text/javascript\">alert('Thank you for your query, we will be in touch shortly');</script>");
+
+            //Clear the form
             contactFirstName.Text = "";
             contactLastName.Text = "";
             contactEmail.Text = "";
             contactMessage.Text = "";
-            breakfastCheckBoxList.ClearSelection();
             transportCheckBoxList.ClearSelection();
         }
-        catch (Exception) { }
+        catch
+        {
+            //If the message failed at some point, let the user know
+            Response.Write("<script type=\"text/javascript\">alert('Your message has not been sent, please try again');</script>");
+        }
     }
-
 }
