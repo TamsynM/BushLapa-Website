@@ -83,10 +83,7 @@
     height:494px;
     color: white;
 }
-a
-{
-    background-color:grey;
-}
+    
 #menu
 {
     list-style: none;
@@ -129,11 +126,14 @@ a
     margin: 0;
     padding: 0;
 }
+
+
 #list li
 {
     border-bottom:1px solid #707070;
     z-index:3;
 }
+    
 #list li a:link, #list li a:visited/*changes the plain when not hovered over for menu*/
 {
     display: block;
@@ -194,11 +194,6 @@ body:after
 {
     content: "";
     background-image:url(Images/background/068.JPG);
-   /* background-repeat:repeat;
-    background-position:center;
-    background-attachment:fixed;
-    filter: alpha(opacity=50);
-    */
     background-size:cover;
     opacity: 0.5;
     top: 0;
