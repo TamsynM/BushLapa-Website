@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -34,6 +34,7 @@ public partial class Contact_Us : System.Web.UI.Page
                     while (dr.Read())
                     {
                         Response.Write(dr["booked_dates"].ToString() + "<br />");
+                        // Calendar1_DayRender;
 
                     }
 
@@ -43,16 +44,9 @@ public partial class Contact_Us : System.Web.UI.Page
                 connection.Close();
             }
         }
-
         catch (Exception ex)
         {
             Response.Write("An error occured: " + ex.Message);
-        }
-
-        //Make the calendar invisible
-        if (!IsPostBack)
-        {
-            Calendar1.Visible = false;
         }
     }
 
@@ -69,7 +63,7 @@ public partial class Contact_Us : System.Web.UI.Page
             msg.From = address;
             //Append their name in the beginning of the subject
             msg.Subject = "Booking Enquiry";
-            msg.Body = "Email: " + contactEmail.Text + "\n" + "Contact Number: \n" + contactNumber.Text + "\n" + "Date Selected: \n" + selectedDateTxtBox.Text + "\n" + "Transport required: \n" + transportCheckBoxList.SelectedItem + "\n"+ "Question: \n" + contactMessage.Text + "\n";
+            msg.Body = "Email: " + contactEmail.Text + "\n" + "Contact Number: \n" + contactNumber.Text + "\n" + "Transport required: \n" + transportCheckBoxList.SelectedItem + "\n"+ "Question: \n" + contactMessage.Text + "\n";
 
             //Configure an SmtpClient to send the mail.
             SmtpClient client = new SmtpClient("nicholson.aserv.co.za");
@@ -88,11 +82,8 @@ public partial class Contact_Us : System.Web.UI.Page
             contactFirstName.Text = "";
             contactLastName.Text = "";
             contactEmail.Text = "";
-            contactNumber.Text = "";
             contactMessage.Text = "";
-            selectedDateTxtBox.Text = "";
             transportCheckBoxList.ClearSelection();
-            Calendar1.Visible = false;
         }
         catch
         {
@@ -124,16 +115,12 @@ public partial class Contact_Us : System.Web.UI.Page
 
                         if (dt.Rows.Count > 0)
                         {
-                            //Go through all the rows in the table
                             for (int i = 0; i < dt.Rows.Count; i++)
                             {
                                 occasionDate = Convert.ToDateTime(dt.Rows[i]["booked_dates"]);
-                                //If the date is in the table || (or) If the date is before today
-                                if (e.Day.Date == occasionDate || e.Day.Date < DateTime.Now.Date)
+                                if (e.Day.Date == occasionDate)
                                 {
-                                    //Make is unselectable and change colour
-                                    e.Day.IsSelectable = false;
-                                    e.Cell.BackColor = System.Drawing.Color.Honeydew;
+                                    e.Cell.BackColor = System.Drawing.Color.Red;
                                 }
                             }
                         }
@@ -149,26 +136,6 @@ public partial class Contact_Us : System.Web.UI.Page
         catch (Exception ex)
         {
             Response.Write("An error occured: " + ex.Message);
-        }
-    }
-
-    //Add selected date to text box when a date is clicked
-    protected void Calendar1_SelectionChanged(object sender, EventArgs e)
-    {
-        selectedDateTxtBox.Text = Calendar1.SelectedDate.ToShortDateString();
-    }
-
-    //Make Calendar Visible on image button click
-    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
-    {
-        if(Calendar1.Visible == false)
-        {
-            Calendar1.Visible = true;
-        }
-
-        else
-        {
-            Calendar1.Visible = false;
         }
     }
 }
