@@ -6,12 +6,48 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Net.Mail;
+using System.Data.Odbc;
+using System.Data.SqlClient;
+using System.Collections;
+using System.Data;
+using System.Configuration;
 
 public partial class Contact_Us : System.Web.UI.Page
 {
+    OdbcDataAdapter odbcda;
+    //SqlDataAdapter sqlda;
+    DataSet ds;
+    string str;
+    DataTable dt;
+    OdbcCommand com;
+
     protected void Page_Load(object sender, EventArgs e)
     {
+        try
+        {
+            using (OdbcConnection connection = new OdbcConnection(ConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString))
+            {
+                connection.Open();
+                using (OdbcCommand command = new OdbcCommand("SELECT booked_dates FROM confirmed_dates", connection))
+                using (OdbcDataReader dr = command.ExecuteReader())
+                {
+                    while (dr.Read())
+                    {
+                        Response.Write(dr["booked_dates"].ToString() + "<br />");
+                        // Calendar1_DayRender;
 
+                    }
+
+                    //end of original statement
+                    dr.Close();
+                }
+                connection.Close();
+            }
+        }
+        catch (Exception ex)
+        {
+            Response.Write("An error occured: " + ex.Message);
+        }
     }
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -53,6 +89,53 @@ public partial class Contact_Us : System.Web.UI.Page
         {
             //If the message failed at some point, let the user know
             Response.Write("<script type=\"text/javascript\">alert('Your message has not been sent, please try again');</script>");
+        }
+    }
+
+    protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+    {
+        try
+        {
+            using (OdbcConnection connection2 = new OdbcConnection(ConfigurationManager.ConnectionStrings["MySQLConnStr"].ConnectionString))
+            {
+                connection2.Open();
+                using (OdbcCommand command2 = new OdbcCommand("SELECT booked_dates FROM confirmed_dates", connection2))
+                using (OdbcDataReader dr2 = command2.ExecuteReader())
+                {
+                    while (dr2.Read())
+                    {
+                        //Test to show calendar  
+                        str = "SELECT booked_dates FROM confirmed_dates";
+                        com = new OdbcCommand(str, connection2);
+                        odbcda = new OdbcDataAdapter(com);
+                        dt = new DataTable();
+                        odbcda.Fill(dt);
+
+                        DateTime occasionDate;
+
+                        if (dt.Rows.Count > 0)
+                        {
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                occasionDate = Convert.ToDateTime(dt.Rows[i]["booked_dates"]);
+                                if (e.Day.Date == occasionDate)
+                                {
+                                    e.Cell.BackColor = System.Drawing.Color.Red;
+                                }
+                            }
+                        }
+
+                    }
+
+                    //end of original statement
+                    dr2.Close();
+                }
+                connection2.Close();
+            }
+        }
+        catch (Exception ex)
+        {
+            Response.Write("An error occured: " + ex.Message);
         }
     }
 }

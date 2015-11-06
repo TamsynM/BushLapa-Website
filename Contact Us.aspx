@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
       <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
-	  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"> <!-- TM - Added this line to include a page icon -->
+	  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/> <!-- TM - Added this line to include a page icon -->
     <title>Contact Us</title>
 </head>
 <body>
@@ -83,7 +83,19 @@
                 <asp:TextBox ID="contactMessage" runat="server" 
                 TextMode="MultiLine" Rows="10" Width="400px" />
                 </p>
-                
+
+                <!--  Insert Calendar  -->
+                <asp:Calendar ID="Calendar1" runat="server" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" Height="200px" 
+                ShowGridLines="True" Width="220px" ondayrender="Calendar1_DayRender">
+                <SelectedDayStyle BackColor="#CCCCFF" Font-Bold="True" />
+                <SelectorStyle BackColor="#FFCC66" />
+                <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+                <OtherMonthDayStyle ForeColor="#CC9966" />
+                <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
+                <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
+                <TitleStyle BackColor="#990000" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
+              </asp:Calendar>
+
                 <p>
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="Button1_Click" ValidationGroup="save" />
                 </p>
